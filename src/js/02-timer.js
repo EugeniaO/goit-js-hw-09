@@ -20,7 +20,7 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
       chosenDate = selectedDates[0].getTime();
-      currentDate = new Date().getTime();
+      const currentDate = new Date().getTime();
       const isSetledTimeInPast = (chosenDate - currentDate) <= 0;
 
       if (isSetledTimeInPast) {
