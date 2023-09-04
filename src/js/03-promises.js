@@ -26,6 +26,11 @@ function handleSubmit(event) {
   const amount = +formEl.elements.amount.value;
   let timeout = delay + step;
 
+  if (delay < 0 || step < 0 || amount <= 0) {
+    Notify.warning(`Please enter valid values!`);
+    return
+  }
+
   for (let i = 0; i < amount; i++) { 
     const position = i + 1;
     timeout = i ? timeout : delay;
